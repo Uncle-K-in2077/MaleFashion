@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout"
+		template="/WEB-INF/layout/homeLayout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layout/_header.jsp" />
+
+		<put-attribute name="body" value="" />
+
+		<put-attribute name="banner"
+			value="/WEB-INF/layout/_banner.jsp" />
+		<put-attribute name="count"
+			value="/WEB-INF/layout/_count.jsp" />
+		<put-attribute name="instagram"
+			value="/WEB-INF/layout/_instagram.jsp" />
+		<put-attribute name="blogs"
+			value="/WEB-INF/layout/_blogs.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/layout/_footer.jsp" />
+	</definition>
+
+
+	<definition name="pages/home" extends="baseLayout">
+		<!--<put-attribute name="body" value="/WEB-INF/views/pages/home.jsp" /> -->
+		<put-attribute name="body"
+			value="/WEB-INF/layout/_carousel.jsp" />
+	</definition>
+
+	<definition name="shoppage" extends="baseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/product.jsp"></put-attribute>
+	</definition>
+
+	<!-- Admin page -->
+	<definition name="adminLayout"
+		template="/WEB-INF/layout/admin_main.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layout/_header.jsp" />
+		<put-attribute name="adminMenu"
+			value="/WEB-INF/views/admin_main.jsp"></put-attribute>
+
+		<put-attribute name="body" value="" />
+
+		<put-attribute name="footer"
+			value="/WEB-INF/layout/_footer.jsp" />
+	</definition>
+
+	<definition name="admin-index" extends="adminLayout">
+		<put-attribute name="body" value="/WEB-INF/views/adminProduct.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="admin-product-detail" extends="adminLayout">
+		<put-attribute name="body" value="/WEB-INF/views/adminDetailProduct.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>
