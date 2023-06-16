@@ -24,17 +24,17 @@
 	<div class="wrapper d-flex align-items-stretch">
 		<nav id="sidebar" >
 			<div class="p-4 pt-5">
-				<a href="#" class="img logo rounded-circle mb-5"
-					style="background-image: url(/sidebar/images/logo.jpg);"></a>
+				<a href="#" class="img logo  mb-5"
+					style="background-image: url(/sidebar/images/logo2.jpg);"></a>
 				<ul class="list-unstyled components mb-5">
-					<li class="active"><a href="#homeSubmenu"
+					<li class="${currentLine == 'product' ? 'active' : ''}"><a href="#homeSubmenu"
 						data-toggle="collapse" aria-expanded="false"
 						class="dropdown-toggle">Product</a>
 						<ul class="collapse list-unstyled" id="homeSubmenu">
 							<li><a href="/admin/product">All product</a></li>
 							<li><a href="#">Disable product</a></li>
 						</ul></li>
-					<li><a href="#">Category</a></li>
+					<li class="${currentLine == 'category' ? 'active' : ''}"><a href="/admin/category">Category</a></li>
 					<li><a href="#">Account</a></li>
 					<li><a href="#">Order</a></li>
 					<li><a href="#">About</a></li>
@@ -107,6 +107,5 @@
 	<script src="/sidebar/js/bootstrap.min.js"></script>
 	<script src="/sidebar/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </body>
 </html>

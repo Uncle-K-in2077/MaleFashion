@@ -20,6 +20,8 @@ public class Category implements Serializable {
 
 	private String name;
 
+	private int status;
+
 	//bi-directional many-to-one association to Product
 	@OneToMany(mappedBy="category")
 	private List<Product> products;
@@ -41,6 +43,14 @@ public class Category implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	public List<Product> getProducts() {

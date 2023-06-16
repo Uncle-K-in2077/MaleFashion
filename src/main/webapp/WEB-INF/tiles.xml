@@ -58,4 +58,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/adminDetailProduct.jsp"></put-attribute>
 	</definition>
 
+	<definition name="admin-category" extends="adminLayout">
+		<put-attribute name="body" value="/WEB-INF/views/adminCategory.jsp"></put-attribute>
+	</definition>
+
 </tiles-definitions>

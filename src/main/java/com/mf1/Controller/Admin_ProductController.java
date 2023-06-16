@@ -49,6 +49,7 @@ public class Admin_ProductController {
 		List<Category> categoryList = categoryService.getAllCategories();
 		request.getSession().setAttribute("productList", productList);
 		request.getSession().setAttribute("categoryList", categoryList);
+		model.addAttribute("currentLine", "product");
 		return "admin-index";
 	}
 	

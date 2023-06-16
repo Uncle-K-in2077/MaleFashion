@@ -1,7 +1,7 @@
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<script src="../../ckeditor/ckeditor/ckeditor.js"></script>
 <button class="btn btn-dark collapse-button" style="margin-bottom: 5px" type="button"
 				data-bs-toggle="collapse" data-bs-target="#collapseExample"
 				aria-expanded="false" aria-controls="collapseExample">Create
@@ -52,6 +52,11 @@
 						        document.getElementById('categoryHidden').value = categoryId;
 						    });
 						</script>
+						
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Description</label>
+							<textarea class="form-control mb-3" name="descrip2" cols="15">${findProd.descrip }</textarea>
+						</div>
 
 					</div>
 
@@ -116,4 +121,7 @@
         //xhr.open('POST', '/admin/product/updateStatus?productId=' + productId + '&status=' + newStatus, true);
         xhr.send();
     });
+</script>
+<script>
+	CKEDITOR.replace('descrip2');
 </script>

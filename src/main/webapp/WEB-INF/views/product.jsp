@@ -86,7 +86,7 @@
 										<i class="fa fa-star"></i> 
 										<i class="fa fa-star-o"></i>
 									</div>
-									<h5><fmt:formatNumber value="${item.price}" pattern="###,###" /> đ</h5>
+									<h5><fmt:formatNumber value="${item.price}" pattern="###,###" /> VND</h5>
 									<div class="product__color__select">
 										<label for="pc-7"> <input type="radio" id="pc-7">
 										</label> <label class="active black" for="pc-8"> <input
