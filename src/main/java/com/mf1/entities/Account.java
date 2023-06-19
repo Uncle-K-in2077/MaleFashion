@@ -1,8 +1,19 @@
 package com.mf1.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.UniqueElements;
 
 
 /**
@@ -21,15 +32,21 @@ public class Account implements Serializable {
 
 	private byte admin;
 
+	
+	@Column(name="email")
+	@NotEmpty(message = "Email is required")
+	@Email(message = "Invalid email format")
 	private String email;
 
 	@Column(name="full_name")
 	private String fullName;
 
+	@NotEmpty(message = "Password is required")
 	private String password;
 
 	private String photo;
 
+	@NotEmpty(message = "Username is required")
 	private String username;
 
 	//bi-directional many-to-one association to Order

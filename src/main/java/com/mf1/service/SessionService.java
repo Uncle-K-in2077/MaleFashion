@@ -5,6 +5,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mf1.entities.Account;
+
 @Service
 public class SessionService {
 	@Autowired
@@ -20,5 +22,9 @@ public class SessionService {
 
 	public void remove(String name) {
 		session.removeAttribute(name);
+	}
+	
+	public void saveAccount(Account account) {
+	    set("account", account);
 	}
 }

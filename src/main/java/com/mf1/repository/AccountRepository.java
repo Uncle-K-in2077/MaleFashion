@@ -6,4 +6,7 @@ import com.mf1.entities.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Integer>{
 	Account findByUsername(String username);
+	
+	Account findByEmail(String email);
+	
 }

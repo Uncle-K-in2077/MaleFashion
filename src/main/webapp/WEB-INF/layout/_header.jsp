@@ -1,4 +1,5 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -42,9 +43,17 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
+							    <c:choose>
+							        <c:when test="${empty account}">
+							            <a href="#">Sign in</a>
+							            <a href="#">FAQs</a>
+							        </c:when>
+							        <c:otherwise>
+							            <a href="#">${account.username}</a>
+							            <a href="#">FAQs</a>
+							        </c:otherwise>
+							    </c:choose>
+							</div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>

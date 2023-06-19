@@ -16,4 +16,9 @@ public class homeController {
 		return "pages/home";
 	}
 	
+	@GetMapping("/1")
+	public String testView() {
+		return "/home";
+	}
+	
 }
