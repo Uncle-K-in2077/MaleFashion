@@ -166,7 +166,7 @@ public class RegisterController {
 			account.setPassword(account.getPassword());
 			
 			accountRepository.save(account);
-			model.addAttribute("account", account);
+			sessionService.set("account", account);
 			System.out.println("SignUp succsess!");
 	    	listOTP.remove(matchedOTP);
 	    	

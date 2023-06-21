@@ -23,8 +23,8 @@ public class InterConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(global).addPathPatterns("/**").excludePathPatterns("/assets/**");
 
-//		registry.addInterceptor(auth).addPathPatterns("/account/edit", "/account/chgpwd", "/order/**", "/admin/**")
-//				.excludePathPatterns("/assets/**", "/admin/home/index");
+		registry.addInterceptor(auth).addPathPatterns("/account/edit", "/account/chgpwd", "/order/**", "/admin/**")
+				.excludePathPatterns("/assets/**", "/admin/home/index");
 
 		LocaleChangeInterceptor locale = new LocaleChangeInterceptor();
 		locale.setParamName("lang");

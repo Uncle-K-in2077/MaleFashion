@@ -45,12 +45,12 @@
                             <div class="header__top__links">
 							    <c:choose>
 							        <c:when test="${empty account}">
-							            <a href="#">Sign in</a>
+							            <a href="/login">Log In</a>
 							            <a href="#">FAQs</a>
 							        </c:when>
 							        <c:otherwise>
-							            <a href="#">${account.username}</a>
-							            <a href="#">FAQs</a>
+							            <a style="color: #E53642; font-weight: 600;" href="#"> <span style="color: white">Hi </span> ${account.username}</a>
+							            <a href="/login/logout">LogOut</a>
 							        </c:otherwise>
 							    </c:choose>
 							</div>
@@ -97,7 +97,7 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="/img/icon/search.png" alt=""></a>
                         <a href="#"><img src="/img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="/img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="/cart"><img src="/img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>
                 </div>

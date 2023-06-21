@@ -2,7 +2,6 @@ package com.mf1.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 
 /**
@@ -16,11 +15,14 @@ public class OrderDetail implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	private BigDecimal price;
+	private double price;
 
 	private int quantity;
+
+	private int status;
 
 	//bi-directional many-to-one association to Order
 	@ManyToOne
@@ -41,11 +43,11 @@ public class OrderDetail implements Serializable {
 		this.id = id;
 	}
 
-	public BigDecimal getPrice() {
+	public double getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
@@ -55,6 +57,14 @@ public class OrderDetail implements Serializable {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public int getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	public Order getOrder() {

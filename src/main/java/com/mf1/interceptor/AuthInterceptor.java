@@ -19,7 +19,7 @@ public class AuthInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		String uri = request.getRequestURI();
-		Account user = session.get("user"); // lấy từ session
+		Account user = session.get("account"); // lấy từ session
 
 		if (user == null) { // chưa đăng nhập
 			session.set("security-uri", uri);

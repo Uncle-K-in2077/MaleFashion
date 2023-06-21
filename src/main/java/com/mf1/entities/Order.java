@@ -2,6 +2,9 @@ package com.mf1.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 import java.util.Date;
 import java.util.List;
 
@@ -17,13 +20,26 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@NotEmpty(message = "Address is required")
 	private String address;
+
+	private double amount;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="created_at")
 	private Date createdAt;
+
+	private String note;
+
+	@Column(name = "phone")
+	@NotEmpty(message = "PhoneNumber is required")
+	@Pattern(regexp = "[0-9]{10}", message = "Invalid phone number")
+	private String phone;
+
+	private int status;
 
 	//bi-directional many-to-one association to OrderDetail
 	@OneToMany(mappedBy="order")
@@ -52,12 +68,44 @@ public class Order implements Serializable {
 		this.address = address;
 	}
 
+	public double getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
 	public Date getCreatedAt() {
 		return this.createdAt;
 	}
 
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+
+	public String getNote() {
+		return this.note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public int getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	public List<OrderDetail> getOrderDetails() {

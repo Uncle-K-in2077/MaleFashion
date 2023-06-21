@@ -23,6 +23,22 @@
 		<put-attribute name="footer"
 			value="/WEB-INF/layout/_footer.jsp" />
 	</definition>
+	
+	<definition name="SeconnBaseLayout"
+		template="/WEB-INF/layout/cartLayout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layout/_header.jsp" />
+			
+		<put-attribute name="body" value="" />
+
+		<put-attribute name="count"
+			value="/WEB-INF/layout/_count.jsp" />
+
+		<put-attribute name="blogs"
+			value="/WEB-INF/layout/_blogs.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/layout/_footer.jsp" />
+	</definition>
 
 
 	<definition name="pages/home" extends="baseLayout">
@@ -34,6 +50,16 @@
 	<definition name="shoppage" extends="baseLayout">
 		<put-attribute name="body"
 			value="/WEB-INF/views/product.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="shoppingCart" extends="SeconnBaseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/shoppingCart.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="shoppingCart-checkOut" extends="SeconnBaseLayout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/checkOut.jsp"></put-attribute>
 	</definition>
 
 	<!-- Admin page -->
