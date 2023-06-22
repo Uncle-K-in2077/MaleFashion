@@ -26,7 +26,7 @@ public class InterConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(global).addPathPatterns("/**").excludePathPatterns("/assets/**");
 		
-		registry.addInterceptor(check).addPathPatterns("/cart/**").excludePathPatterns("/checkOut/**");
+		registry.addInterceptor(check).addPathPatterns("/cart/**", "/checkOut/**").excludePathPatterns();
 
 		registry.addInterceptor(auth).addPathPatterns("/account/edit", "/account/chgpwd", "/order/**", "/admin/**")
 				.excludePathPatterns("/assets/**", "/admin/home/index");
@@ -37,13 +37,13 @@ public class InterConfig implements WebMvcConfigurer {
 	}
 
 
-	@Bean("localeResolver")
-	public LocaleResolver getLocaleResolver() {
-		CookieLocaleResolver resolver = new CookieLocaleResolver();
-		resolver.setDefaultLocale(new Locale("vi"));
-		resolver.setCookieMaxAge(10 * 24 * 60 * 60); // 10 ngày
-		resolver.setCookiePath("/");
-		return  resolver;
-	}
+//	@Bean("localeResolver")
+//	public LocaleResolver getLocaleResolver() {
+//		CookieLocaleResolver resolver = new CookieLocaleResolver();
+//		resolver.setDefaultLocale(new Locale("vi"));
+//		resolver.setCookieMaxAge(10 * 24 * 60 * 60); // 10 ngày
+//		resolver.setCookiePath("/");
+//		return  resolver;
+//	}
 
 }

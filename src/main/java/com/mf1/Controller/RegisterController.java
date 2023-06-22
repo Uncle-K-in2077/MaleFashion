@@ -25,7 +25,6 @@ import com.mf1.entities.Account;
 import com.mf1.repository.AccountRepository;
 import com.mf1.service.MailerService;
 import com.mf1.service.SessionService;
-import com.mf1.MessagesConfig;
 import com.mf1.dto.CodeOTP;
 
 @Controller

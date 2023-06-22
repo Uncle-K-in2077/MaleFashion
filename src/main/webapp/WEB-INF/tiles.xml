@@ -62,6 +62,26 @@
 			value="/WEB-INF/views/checkOut.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="user-order-main" template="/WEB-INF/layout/orderByUserLayout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layout/_header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/layout/_footer.jsp" />
+	</definition>
+	
+	<definition name="user-order" extends="user-order-main">
+		<put-attribute name="body"
+			value="/WEB-INF/views/orderByUser.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="user-order-detail" extends="user-order-main">
+		<put-attribute name="body"
+			value="/WEB-INF/views/orderByUserDetail.jsp"></put-attribute>
+	</definition>
+	
+	
+	
 	<definition name="shoppage-detail" template="/WEB-INF/layout/productDetailLayout.jsp">
 		<put-attribute name="header"
 			value="/WEB-INF/layout/_header.jsp" />
@@ -99,6 +119,14 @@
 	
 	<definition name="admin-account" extends="adminLayout">
 		<put-attribute name="body" value="/WEB-INF/views/adminAccount.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="admin-order" extends="adminLayout">
+		<put-attribute name="body" value="/WEB-INF/views/adminOrder.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="admin-order-detail" extends="adminLayout">
+		<put-attribute name="body" value="/WEB-INF/views/adminDetailOrder.jsp"></put-attribute>
 	</definition>
 	
 	

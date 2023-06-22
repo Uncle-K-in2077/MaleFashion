@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,6 +27,7 @@ import com.mf1.entities.Product;
 import com.mf1.repository.OrderRepository;
 import com.mf1.repository.ProductRepository;
 import com.mf1.repository.orderDetailRepository;
+import com.mf1.service.AccountService;
 import com.mf1.service.CartService;
 import com.mf1.service.MailerService;
 import com.mf1.service.SessionService;
@@ -50,6 +52,9 @@ public class CheckOutController {
 	
 	@Autowired
 	MailerService mailerService;
+	
+	@Autowired
+	AccountService accountService;
 	
 	private final PhoneValidator phoneValidator;
 
@@ -127,4 +132,37 @@ public class CheckOutController {
 		return "redirect:/home";
 		
 	}
+	
+	@GetMapping("/{userId}")
+	public String getOrdersByUserId(@PathVariable int userId, Model model) {
+	    Account account = accountService.getAccountById(userId);
+	    if (account == null) {
+	        // Xử lý khi người dùng không tồn tại
+	        return "error-page"; // Điều hướng đến trang lỗi hoặc trang thông báo không tìm thấy người dùng
+	    }
+	    
+	    List<Order> orders = orderRepository.findByAccount(account, null);
+	    
+	    model.addAttribute("account", account);
+	    model.addAttribute("orders", orders);
+	    
+	    return "user-order"; // Điều hướng đến trang hiển thị danh sách đơn hàng của người dùng
+	}
+	
+	@GetMapping("/detail/{orderId}")
+	public String getOrderById(@PathVariable int orderId, Model model) {
+	    Order order = orderRepository.findById(orderId);
+	    if (order == null) {
+	        // Xử lý khi không tìm thấy đơn hàng
+	        return "error-page"; // Điều hướng đến trang lỗi hoặc trang thông báo không tìm thấy đơn hàng
+	    }
+	    
+	    List<OrderDetail> orderDetails = order.getOrderDetails(); // Lấy danh sách OrderDetail từ Order
+	    
+	    model.addAttribute("order", order);
+	    model.addAttribute("orderDetails", orderDetails);
+	    
+	    return "user-order-detail"; // Điều hướng đến trang hiển thị chi tiết đơn hàng
+	}
+	
 }

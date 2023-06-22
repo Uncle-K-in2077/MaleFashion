@@ -16,4 +16,6 @@ public interface OrderRepository extends JpaRepository<Order, Integer>{
 	Page<Order> findByIdLike(int id, Pageable pageable);
 
 	List<Order> findByAccount(Account account, Sort sort);
+	
+	Order findById(int orderId);
 }

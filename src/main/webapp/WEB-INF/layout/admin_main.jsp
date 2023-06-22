@@ -36,7 +36,7 @@
 						</ul></li>
 					<li class="${currentLine == 'category' ? 'active' : ''}"><a href="/admin/category">Category</a></li>
 					<li class="${currentLine == 'account' ? 'active' : ''}"><a href="/admin/account">Account</a></li>
-					<li><a href="#">Order</a></li>
+					<li class="${currentLine == 'order' ? 'active' : ''}"><a href="/admin/order">Orders</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Mail center</a></li>
 					<!-- 
