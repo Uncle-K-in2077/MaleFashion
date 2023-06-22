@@ -1,4 +1,5 @@
 <%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <!-- Instagram Section Begin -->
 <section class="instagram spad">
 	<div class="container">
@@ -22,9 +23,8 @@
 			<div class="col-lg-4">
 				<div class="instagram__text">
 					<h2>Instagram</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-						do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					<h3>#Male_Fashion</h3>
+					<p><s:message code="insta.descrip"/> </p>
+					<h3><s:message code="insta.hashtag"/></h3>
 				</div>
 			</div>
 		</div>

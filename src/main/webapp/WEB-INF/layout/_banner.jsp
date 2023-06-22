@@ -1,4 +1,5 @@
     <%@ page pageEncoding="utf-8"%>
+    <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
     <!-- Banner Section Begin -->
     <section class="banner spad">
         <div class="container">
@@ -9,8 +10,8 @@
                             <img src="img/banner/banner-1.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
-                            <h2>Clothing Collections 2030</h2>
-                            <a href="#">Shop now</a>
+                            <h2><s:message code="bn.1.title"/></h2>
+                            <a href="#"><s:message code="bn.1.smtitle"/></a>
                         </div>
                     </div>
                 </div>
@@ -20,8 +21,8 @@
                             <img src="img/banner/banner-2.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
-                            <h2>Accessories</h2>
-                            <a href="#">Shop now</a>
+                            <h2><s:message code="bn.2.title"/></h2>
+                            <a href="#"><s:message code="bn.2.smtitle"/></a>
                         </div>
                     </div>
                 </div>
@@ -31,8 +32,8 @@
                             <img src="img/banner/banner-3.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
-                            <h2>Shoes Spring 2030</h2>
-                            <a href="#">Shop now</a>
+                            <h2><s:message code="bn.3.title"/></h2>
+                            <a href="#"><s:message code="bn.3.smtitle"/></a>
                         </div>
                     </div>
                 </div>

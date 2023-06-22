@@ -18,14 +18,14 @@ public class InterConfig implements WebMvcConfigurer {
 
 	@Autowired
 	AuthInterceptor auth;
-	
+
 	@Autowired
 	CheckAccountInterceptor check;
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(global).addPathPatterns("/**").excludePathPatterns("/assets/**");
-		
+
 		registry.addInterceptor(check).addPathPatterns("/cart/**", "/checkOut/**").excludePathPatterns();
 
 		registry.addInterceptor(auth).addPathPatterns("/account/edit", "/account/chgpwd", "/order/**", "/admin/**")
@@ -35,15 +35,5 @@ public class InterConfig implements WebMvcConfigurer {
 		locale.setParamName("lang");
 		registry.addInterceptor(locale).addPathPatterns("/**");
 	}
-
-
-//	@Bean("localeResolver")
-//	public LocaleResolver getLocaleResolver() {
-//		CookieLocaleResolver resolver = new CookieLocaleResolver();
-//		resolver.setDefaultLocale(new Locale("vi"));
-//		resolver.setCookieMaxAge(10 * 24 * 60 * 60); // 10 ngày
-//		resolver.setCookiePath("/");
-//		return  resolver;
-//	}
 
 }

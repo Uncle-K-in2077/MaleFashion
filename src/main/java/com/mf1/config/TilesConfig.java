@@ -27,13 +27,6 @@ public class TilesConfig {
 		return tilesConfigurer;
 	}
 	
-	@Bean("localeResolver")
-	public LocaleResolver getLocaleResolver() {
-		CookieLocaleResolver resolver = new CookieLocaleResolver();
-		resolver.setDefaultLocale(new Locale("vi"));
-		resolver.setCookieMaxAge(10 * 24 * 60 * 60);
-		resolver.setCookiePath("/");
-		return resolver;
-	}
+	
 
 }
