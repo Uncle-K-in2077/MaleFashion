@@ -39,6 +39,7 @@
 					<li class="${currentLine == 'order' ? 'active' : ''}"><a href="/admin/order">Orders</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Mail center</a></li>
+					<li><a href="/admin/report">Report</a></li>
 					<!-- 
 					<li><a href="#pageSubmenu" data-toggle="collapse"
 						aria-expanded="false" class="dropdown-toggle">Pages</a>

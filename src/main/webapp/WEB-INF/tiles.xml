@@ -129,6 +129,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/adminDetailOrder.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="admin-report" extends="adminLayout">
+		<put-attribute name="body" value="/WEB-INF/views/adminReport.jsp"></put-attribute>
+	</definition>
+	
 	
 
 </tiles-definitions>
