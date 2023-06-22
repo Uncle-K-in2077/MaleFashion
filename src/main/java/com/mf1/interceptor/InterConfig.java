@@ -18,10 +18,15 @@ public class InterConfig implements WebMvcConfigurer {
 
 	@Autowired
 	AuthInterceptor auth;
+	
+	@Autowired
+	CheckAccountInterceptor check;
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(global).addPathPatterns("/**").excludePathPatterns("/assets/**");
+		
+		registry.addInterceptor(check).addPathPatterns("/cart/**").excludePathPatterns("/checkOut/**");
 
 		registry.addInterceptor(auth).addPathPatterns("/account/edit", "/account/chgpwd", "/order/**", "/admin/**")
 				.excludePathPatterns("/assets/**", "/admin/home/index");

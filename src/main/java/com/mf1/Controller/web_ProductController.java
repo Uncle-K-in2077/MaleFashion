@@ -1,10 +1,12 @@
 package com.mf1.Controller;
 
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,6 +17,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -43,6 +46,9 @@ public class web_ProductController {
 
 	@Autowired
 	HttpServletRequest request;
+	
+	@Autowired
+	HttpServletResponse response;
 	
 	@Autowired
 	SessionService sessionService;
@@ -129,5 +135,27 @@ public class web_ProductController {
 		return "shoppage";
 	}
 	
+	@GetMapping("/{id}")
+	public String getProduct(@PathVariable("id") Optional<Integer> id) {
+		if (id.isEmpty()) {
+			try {
+				response.sendRedirect("/");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		Optional<Product> product = productRepository.findById(id.get());
+		if (product.isEmpty()) {
+			try {
+				response.sendRedirect("/");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		sessionService.set("product", product.get());
+		return "shoppage-detail";
+	}
 	
 }

@@ -61,6 +61,15 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/checkOut.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="shoppage-detail" template="/WEB-INF/layout/productDetailLayout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layout/_header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/productDetail.jsp"></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/layout/_footer.jsp" />
+	</definition>
 
 	<!-- Admin page -->
 	<definition name="adminLayout"
@@ -87,5 +96,11 @@
 	<definition name="admin-category" extends="adminLayout">
 		<put-attribute name="body" value="/WEB-INF/views/adminCategory.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="admin-account" extends="adminLayout">
+		<put-attribute name="body" value="/WEB-INF/views/adminAccount.jsp"></put-attribute>
+	</definition>
+	
+	
 
 </tiles-definitions>

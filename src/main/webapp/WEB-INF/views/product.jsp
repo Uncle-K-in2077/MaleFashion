@@ -65,17 +65,18 @@
 						<div class="col-lg-4 col-md-6 col-sm-6">
 							<!-- Product item begin -->
 							<div class="product__item sale">
-								<div class="product__item__pic set-bg"
+							<div class="product__item__pic set-bg"
 									data-setbg='<c:url value="${item.image }" />'>
 									<span class="${item.issale==1 ? 'label' : '' }">${item.issale==1 ? 'SALE' : '' }</span>
 									<ul class="product__hover">
 										<li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
 										<li><a href="#"><img src="/img/icon/compare.png"
 												alt=""> <span>Compare</span></a></li>
-										<li><a href="#"><img src="/img/icon/search.png"
+										<li><a href="/shop/${item.id }"><img src="/img/icon/search.png"
 												alt=""></a></li>
 									</ul>
 								</div>
+							
 								<div class="product__item__text">
 									<h6>${item.name }</h6>
 									<a href="/cart/add?productId=${item.id }" class="add-cart">+ Add To Cart</a>

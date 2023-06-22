@@ -69,7 +69,7 @@ public class CartController {
 	    
 	    List<CartElement> cartItems = cartService.getList();
 	    sessionService.set("cartItems", cartItems);
-	    return "redirect:/shop";
+	    return "redirect:/cart";
 	}
 	
 	@GetMapping("/update/{id}")

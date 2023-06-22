@@ -41,8 +41,10 @@
 								<tr>
 									<td class="product__cart__item">
 										<div class="product__cart__item__pic">
+										<a href="/shop/${item.id }">
 											<img style="width: 90px; height: 90px" src="${item.image }"
 												alt="">
+										</a>
 										</div>
 										<div class="product__cart__item__text">
 											<h6>${item.name }</h6>

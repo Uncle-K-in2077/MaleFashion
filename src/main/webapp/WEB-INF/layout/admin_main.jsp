@@ -35,7 +35,7 @@
 							<li><a href="#">Disable product</a></li>
 						</ul></li>
 					<li class="${currentLine == 'category' ? 'active' : ''}"><a href="/admin/category">Category</a></li>
-					<li><a href="#">Account</a></li>
+					<li class="${currentLine == 'account' ? 'active' : ''}"><a href="/admin/account">Account</a></li>
 					<li><a href="#">Order</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Mail center</a></li>

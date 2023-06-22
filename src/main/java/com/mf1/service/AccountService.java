@@ -1,5 +1,7 @@
 package com.mf1.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,10 @@ import com.mf1.repository.AccountRepository;
 public class AccountService {
 	@Autowired
 	AccountRepository accountRepository;
+	
+	public List<Account> getAllAccount() {
+        return accountRepository.findAll();
+    }
 	
 	public Account saveAccount(Account account) {
 		// Triển khai logic để lưu tài khoản vào cơ sở dữ liệu
@@ -30,4 +36,9 @@ public class AccountService {
 		// Triển khai logic để lấy tài khoản từ cơ sở dữ liệu dựa trên email
 		return accountRepository.findByEmail(email);
 	}
+	
+	public List<Account> searchAccount(String keyword) {
+	    return accountRepository.findByUsernameContainingOrEmailContaining(keyword, keyword);
+	}
+
 }
