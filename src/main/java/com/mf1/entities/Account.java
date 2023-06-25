@@ -12,6 +12,7 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.UniqueElements;
 
@@ -41,7 +42,9 @@ public class Account implements Serializable {
 	@Column(name="full_name")
 	private String fullName;
 
+	
 	@NotEmpty(message = "Password is required")
+	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$", message = "Password must contain at least one lowercase letter, one uppercase letter, and have a minimum length of 8 characters")
 	private String password;
 
 	private String photo;

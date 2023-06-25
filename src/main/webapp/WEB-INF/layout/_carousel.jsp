@@ -4,7 +4,7 @@
 <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel" >
-            <div class="hero__items set-bg" style="max-height: 100%" data-setbg="img/hero/hero-3.jpg">
+            <div class="hero__items set-bg" style="max-height: 100%" data-setbg="img/hero/hero-1.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">

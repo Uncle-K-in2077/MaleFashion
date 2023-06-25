@@ -153,14 +153,13 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="checkout__order" style="min-height: 100%">
 							<h6 class="checkout__title">Product Details</h6>
-							<img alt="" src="${findProd.image }"> <br> <input
-								type="file" name="imageFile">
+							<img id="imageElement" alt="" src="${findProd.image }"> <br> <input
+								type="file" id="imageInput" name="imageFile">
 
 							<br>
 							<br>
 							<button style="width: 49%" type="submit" class="site-btn">SAVE</button>
-							<button style="width: 49%" type="submit"
-								class="site-btn btn-danger">CANCEL</button>
+							<button style="width: 49%" type="reset" class="site-btn btn-danger">CANCEL</button>
 						</div>
 					</div>
 				</div>
@@ -170,6 +169,29 @@
 </section>
 <script>
 	CKEDITOR.replace('descrip');
+
+	// Lấy đối tượng input từ HTML dựa vào id
+	var imageInput = document.getElementById('imageInput');
+
+	// Lắng nghe sự kiện 'change' khi người dùng chọn một file
+	imageInput.addEventListener('change', function(event) {
+		var file = event.target.files[0]; // Lấy file đầu tiên trong danh sách các file đã chọn
+
+		// Kiểm tra xem người dùng đã chọn file hay chưa
+		if (file) {
+			var reader = new FileReader(); // Tạo đối tượng FileReader để đọc nội dung của file
+
+			// Xử lý sự kiện 'load' khi FileReader hoàn thành việc đọc file
+			reader.addEventListener('load', function() {
+				var imageURL = reader.result; // Lấy URL hình ảnh đã đọc từ file
+
+				var imageElement = document.getElementById('imageElement');
+				imageElement.src = imageURL; // Gán URL hình ảnh cho thuộc tính 'src' của thẻ 'img'
+			});
+
+			reader.readAsDataURL(file); // Đọc file dưới dạng URL dữ liệu (data URL)
+		}
+	});
 </script>
 
 <!-- Xử lý khi gạt 2 công tắc -->
