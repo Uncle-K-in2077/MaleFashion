@@ -83,11 +83,11 @@
 						<li class="${currentPage == 'pages' ? 'active' : ''}"><a
 							href="#"><s:message code="hd.l2.pages"/></a>
 							<ul class="dropdown">
-								<li><a href="./about.html">About Us</a></li>
+								<li><a href="../home">About Us</a></li>
 								<li><a href="/checkOut/${account.id }">Your Order</a></li>
 								<li><a href="/cart">Shopping Cart</a></li>
 								<li><a href="/checkOut">Check Out</a></li>
-								<li><a href="./blog-details.html">Blog Details</a></li>
+								<li><a href="../home">Blog Details</a></li>
 							</ul></li>
 						<li class="${currentPage == 'blog' ? 'active' : ''}"><a
 							href="./blog.html"><s:message code="hd.l2.blog"/></a></li>
