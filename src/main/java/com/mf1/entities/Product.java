@@ -25,6 +25,7 @@ public class Product implements Serializable {
 	@Column(name="created_at")
 	private Date createdAt;
 
+	
 	private String descrip;
 
 	private String image;

@@ -11,7 +11,7 @@
 	<groupId>come.mf</groupId>
 	<artifactId>MaleFashion-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>MaleFashion-1</name>
 	<description>Java 5 Assigment</description>
 	<properties>
